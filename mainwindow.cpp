@@ -15,6 +15,12 @@ MainWindow::~MainWindow() {
 
 void MainWindow::initwindow(QWidget* parent){
     view = new class view(parent);
+
+    //QObject::connect(&player,&QPushButton::clicked,&w,[&w](){QDialog *D = new QDialog(&w);D->show();});
+}
+
+void MainWindow::initconnect()
+{
     QObject::connect(view->player,&QPushButton::clicked,this,[&](){
         if(!Music->isPlaying())
         {
@@ -30,9 +36,20 @@ void MainWindow::initwindow(QWidget* parent){
     QObject::connect(view->next,&QPushButton::clicked,this,&MainWindow::NextMusic);
     QObject::connect(view->preview,&QPushButton::clicked,this,&MainWindow::PreviewMusic);
     QObject::connect(Music,&QMediaPlayer::durationChanged,[&](){
-        view->timeSlider->setRange(0,Music->duration());
+        view->timeSlider->setMaximum(Music->duration());
     });
-    //QObject::connect(&player,&QPushButton::clicked,&w,[&w](){QDialog *D = new QDialog(&w);D->show();});
+    QObject::connect(Music,&QMediaPlayer::positionChanged,[&](){
+        view->timeSlider->setSliderPosition(Music->position());
+    });
+    QObject::connect(Music,&QMediaPlayer::durationChanged,[&](){
+        TotalTime = QTime(0,0).addMSecs(Music->duration());
+        qDebug()<<TotalTime.toString();
+        view->time->setText("00:00:00/"+TotalTime.toString());
+    });
+    QObject::connect(Music,&QMediaPlayer::positionChanged,[&](){
+        CurrentTime = QTime(0,0).addMSecs((Music->position()));
+        view->time->setText(CurrentTime.toString()+TotalTime.toString());
+    });
 }
 
 void MainWindow::initMusicList()
@@ -48,9 +65,12 @@ void MainWindow::initMusicList()
 
 void MainWindow::initMusic()
 {
-    Music->setAudioOutput(output);
+    Music->setAudioOutput(OutPut);
     initMusicList();
-    output->setVolume(50);
+    OutPut->setVolume(50);
+    view->timeSlider->setMaximum(Music->duration());
+    TotalTime = QTime(0,0).addMSecs(Music->duration());
+    qDebug()<<TotalTime.toString();
 }
 
 

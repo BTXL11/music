@@ -15,6 +15,7 @@ public:
     QPushButton *preview;
     QLabel *currentMusicName;
     QSlider *timeSlider;
+    QLabel *time;
 };
 
 #endif // VIEW_H

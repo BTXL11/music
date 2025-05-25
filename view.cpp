@@ -14,7 +14,11 @@ view::view(QWidget *parent) {
     currentMusicName->move(200,150);
     currentMusicName->resize(200,50);
     timeSlider = new QSlider(Qt::Horizontal,parent);
-    timeSlider->move(150,250);
+    timeSlider->move(100,250);
     timeSlider->resize(300,50);
+    time = new QLabel(parent);
+    time->setText("00:00/00:00");
+    time->move(325,300);
+    time->resize(200,50);
 
 }

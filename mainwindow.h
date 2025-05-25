@@ -13,6 +13,7 @@
 #include <QStringList>
 #include <QDebug>
 #include <QLabel>
+#include <QTime>
 //#include <MediaExample>
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +29,7 @@ public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
     void initwindow(QWidget* parent);
+    void initconnect();
     void initMusicList();
     void initMusic();
     void addMusicList(QString MusicName);
@@ -40,7 +42,9 @@ private:
     QList<QUrl> MusicList;
     QUrl* CurrentMusic;
     QMediaPlayer *Music = new QMediaPlayer;
-    QAudioOutput *output = new QAudioOutput;
+    QAudioOutput *OutPut = new QAudioOutput;
+    QTime TotalTime;
+    QTime CurrentTime;
     view *view;
 };
 
