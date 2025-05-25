@@ -36,6 +36,9 @@ public:
 public slots:
     void NextMusic();
     void PreviewMusic();
+signals:
+
+
 
 private:
     Ui::MainWindow* ui;

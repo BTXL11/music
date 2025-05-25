@@ -17,8 +17,17 @@ view::view(QWidget *parent) {
     timeSlider->move(100,250);
     timeSlider->resize(300,50);
     time = new QLabel(parent);
-    time->setText("00:00/00:00");
+    //time->setText("00:00/00:00");
     time->move(325,300);
     time->resize(200,50);
+    volumeSlider = new QSlider(parent);
+    volumeSlider->setMaximum(100);
+    volumeSlider->move(425,200);
+    volumeSlider->resize(10,100);
+    volumeSlider->hide();
+    volumeButton = new QPushButton(parent);
+    volumeButton->move(425,300);
+    volumeButton->setText("volume");
+    qDebug()<<"signal";
 
 }

@@ -5,7 +5,6 @@
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) {
-    //initwindow(this);
     ui->setupUi(this);
 }
 
@@ -15,7 +14,8 @@ MainWindow::~MainWindow() {
 
 void MainWindow::initwindow(QWidget* parent){
     view = new class view(parent);
-
+    this->initMusic();
+    this->initconnect();
     //QObject::connect(&player,&QPushButton::clicked,&w,[&w](){QDialog *D = new QDialog(&w);D->show();});
 }
 
@@ -43,12 +43,30 @@ void MainWindow::initconnect()
     });
     QObject::connect(Music,&QMediaPlayer::durationChanged,[&](){
         TotalTime = QTime(0,0).addMSecs(Music->duration());
-        qDebug()<<TotalTime.toString();
         view->time->setText("00:00:00/"+TotalTime.toString());
     });
     QObject::connect(Music,&QMediaPlayer::positionChanged,[&](){
         CurrentTime = QTime(0,0).addMSecs((Music->position()));
-        view->time->setText(CurrentTime.toString()+TotalTime.toString());
+        view->time->setText(CurrentTime.toString()+"/"+TotalTime.toString());
+    });
+    QObject::connect(view->timeSlider,&QSlider::sliderMoved,[&](){
+        Music->setPosition(view->timeSlider->sliderPosition());
+    });
+    QObject::connect(Music,&QMediaPlayer::mediaStatusChanged,[&](){
+        if(Music->mediaStatus()==QMediaPlayer::EndOfMedia){
+            view->next->click();
+        }
+    });
+    QObject::connect(view->volumeSlider,&QSlider::sliderMoved,[&](){
+        OutPut->setVolume(view->volumeSlider->sliderPosition());
+    });
+    QObject::connect(view->volumeButton,&QPushButton::clicked,[&](){
+        if(view->volumeSlider->isHidden()){
+            view->volumeSlider->show();
+        }
+        else{
+            view->volumeSlider->hide();
+        }
     });
 }
 
@@ -70,7 +88,7 @@ void MainWindow::initMusic()
     OutPut->setVolume(50);
     view->timeSlider->setMaximum(Music->duration());
     TotalTime = QTime(0,0).addMSecs(Music->duration());
-    qDebug()<<TotalTime.toString();
+    view->volumeSlider->setSliderPosition(OutPut->volume());
 }
 
 
@@ -91,8 +109,7 @@ void MainWindow::NextMusic()
     }
     Music->setSource(*CurrentMusic);
     view->currentMusicName->setText(CurrentMusic->fileName());
-    qDebug()<<*CurrentMusic;
-
+    view->player->setText("start");
 }
 
 void MainWindow::PreviewMusic()
@@ -107,5 +124,5 @@ void MainWindow::PreviewMusic()
     }
     Music->setSource(*CurrentMusic);
     view->currentMusicName->setText(CurrentMusic->fileName());
-    qDebug()<<*CurrentMusic;
+    view->player->setText("start");
 }
