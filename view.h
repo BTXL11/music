@@ -7,10 +7,12 @@
 #include <QLabel>
 #include <QMainWindow>
 #include <QSlider>
+#include <QAbstractListModel>
 class view {
 public:
-    view(QWidget *parent );
+    view(QAbstractItemModel *model,QWidget *parent );
     QPushButton *player;
+    QPushButton *player2;
     QPushButton *next;
     QPushButton *preview;
     QLabel *currentMusicName;

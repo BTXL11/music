@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "musiclistmodel.h"
 #include "view.h"
 #include <QMainWindow>
 #include <QPushButton>
@@ -14,6 +15,8 @@
 #include <QDebug>
 #include <QLabel>
 #include <QTime>
+#include <QAbstractItemModel>
+#include <QSortFilterProxyModel>
 //#include <MediaExample>
 
 QT_BEGIN_NAMESPACE
@@ -43,12 +46,17 @@ signals:
 private:
     Ui::MainWindow* ui;
     QList<QUrl> MusicList;
-    QUrl* CurrentMusic;
+    MusicListModel *musicListModel;
+    QUrl *CurrentMusic;
+    QString currentMusic;
     QMediaPlayer *Music = new QMediaPlayer;
+    QMediaPlayer *Music2 = new QMediaPlayer;
     QAudioOutput *OutPut = new QAudioOutput;
+    QAudioOutput *OutPut2 = new QAudioOutput;
     QTime TotalTime;
     QTime CurrentTime;
     view *view;
+    QSortFilterProxyModel *viewModel;
 };
 
 

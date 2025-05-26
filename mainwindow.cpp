@@ -13,7 +13,10 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::initwindow(QWidget* parent){
-    view = new class view(parent);
+    musicListModel = new MusicListModel;
+    viewModel = new QSortFilterProxyModel;
+    viewModel->setSourceModel(musicListModel);
+    view = new class view(viewModel,this);
     this->initMusic();
     this->initconnect();
     //QObject::connect(&player,&QPushButton::clicked,&w,[&w](){QDialog *D = new QDialog(&w);D->show();});
@@ -31,6 +34,18 @@ void MainWindow::initconnect()
         {
             Music->pause();
             view->player->setText("start");
+        }
+    });
+    QObject::connect(view->player2,&QPushButton::clicked,this,[&](){
+        if(!Music2->isPlaying())
+        {
+            Music2->play();
+            view->player2->setText("pause");
+        }
+        else
+        {
+            Music2->pause();
+            view->player2->setText("start");
         }
     });
     QObject::connect(view->next,&QPushButton::clicked,this,&MainWindow::NextMusic);
@@ -72,20 +87,36 @@ void MainWindow::initconnect()
 
 void MainWindow::initMusicList()
 {
+    musicListModel->appendPath("E:\\work\\Qt_project\\music\\music_res\\晴天——空匪.mp3");
+    musicListModel->appendPath("E:\\work\\Qt_project\\music\\music_res\\Breathe_-_George_Capon.mp3");
+    musicListModel->appendPath("E:\\work\\Qt_project\\music\\music_res\\Erick_Fill_&amp;_Alwaro_-_You'll_Be_Fine_ft._Crushboys_(Original_Mix)_-_erickfill.mp3");
+    musicListModel->appendPath("E:\\work\\Qt_project\\music\\music_res\\Ocean_-_David_Davis.mp3");
     addMusicList("E:\\work\\Qt_project\\music\\music_res\\晴天——空匪.mp3");
     addMusicList("E:\\work\\Qt_project\\music\\music_res\\Breathe_-_George_Capon.mp3");
     addMusicList("E:\\work\\Qt_project\\music\\music_res\\Erick_Fill_&amp;_Alwaro_-_You'll_Be_Fine_ft._Crushboys_(Original_Mix)_-_erickfill.mp3");
     addMusicList("E:\\work\\Qt_project\\music\\music_res\\Ocean_-_David_Davis.mp3");
     this->CurrentMusic=&MusicList.first();
+    if(viewModel->index(0,0).isValid()){
+        this->currentMusic=musicListModel->index(0,0).data().toString();
+        qDebug()<<"this is valid";
+    }
+    else{
+        qDebug()<<"this is not valid";
+    }
     Music->setSource(*CurrentMusic);
-    view->currentMusicName->setText(CurrentMusic->fileName());
+    Music2->setSource(QUrl::fromLocalFile(this->currentMusic));
+    qDebug()<<QUrl::fromLocalFile(this->currentMusic);
+    view->currentMusicName->setText((*CurrentMusic).fileName());
 }
 
 void MainWindow::initMusic()
 {
     Music->setAudioOutput(OutPut);
+    Music->setAudioOutput(OutPut2);
     initMusicList();
     OutPut->setVolume(50);
+    OutPut2->setVolume(50);
+    view->volumeSlider->setSliderPosition(OutPut->volume());
     view->timeSlider->setMaximum(Music->duration());
     TotalTime = QTime(0,0).addMSecs(Music->duration());
     view->volumeSlider->setSliderPosition(OutPut->volume());

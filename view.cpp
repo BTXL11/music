@@ -1,9 +1,10 @@
 #include "view.h"
 
-view::view(QWidget *parent) {
+view::view(QAbstractItemModel *model,QWidget *parent) {
     player = new QPushButton(parent);
     player->move(200,200);
     player->setText("start");
+    player2 = new QPushButton(parent);
     next = new QPushButton(parent);
     next->move(300,200);
     next->setText("next");
@@ -17,11 +18,11 @@ view::view(QWidget *parent) {
     timeSlider->move(100,250);
     timeSlider->resize(300,50);
     time = new QLabel(parent);
-    //time->setText("00:00/00:00");
     time->move(325,300);
     time->resize(200,50);
     volumeSlider = new QSlider(parent);
     volumeSlider->setMaximum(100);
+    volumeSlider->setMinimum(0);
     volumeSlider->move(425,200);
     volumeSlider->resize(10,100);
     volumeSlider->hide();
