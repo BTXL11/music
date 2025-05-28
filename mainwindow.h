@@ -17,6 +17,10 @@
 #include <QTime>
 #include <QAbstractItemModel>
 #include <QSortFilterProxyModel>
+#include <QModelIndex>
+#include <QListWidget>
+#include <QListWidgetItem>
+#include <QFileDialog>
 //#include <MediaExample>
 
 QT_BEGIN_NAMESPACE
@@ -32,31 +36,32 @@ public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
     void initwindow(QWidget* parent);
+    void initview();
     void initconnect();
     void initMusicList();
     void initMusic();
-    void addMusicList(QString MusicName);
+    void updateMusic(int newMusicIndex);
 public slots:
     void NextMusic();
     void PreviewMusic();
+    void UpdateMusic(QListWidgetItem *item);
+    void AddMusic();
 signals:
 
 
 
 private:
     Ui::MainWindow* ui;
-    QList<QUrl> MusicList;
     MusicListModel *musicListModel;
-    QUrl *CurrentMusic;
-    QString currentMusic;
+    QString CurrentMusic;
+    int CurrentMusicIndex;
     QMediaPlayer *Music = new QMediaPlayer;
-    QMediaPlayer *Music2 = new QMediaPlayer;
     QAudioOutput *OutPut = new QAudioOutput;
-    QAudioOutput *OutPut2 = new QAudioOutput;
     QTime TotalTime;
     QTime CurrentTime;
     view *view;
     QSortFilterProxyModel *viewModel;
+
 };
 
 

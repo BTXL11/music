@@ -8,11 +8,11 @@
 #include <QMainWindow>
 #include <QSlider>
 #include <QAbstractListModel>
+#include <QListWidget>
 class view {
 public:
-    view(QAbstractItemModel *model,QWidget *parent );
+    view(QWidget *parent );
     QPushButton *player;
-    QPushButton *player2;
     QPushButton *next;
     QPushButton *preview;
     QLabel *currentMusicName;
@@ -20,6 +20,8 @@ public:
     QSlider *volumeSlider;
     QPushButton *volumeButton;
     QLabel *time;
+    QListWidget *musicList;
+    QPushButton *addMusic;
 };
 
 #endif // VIEW_H

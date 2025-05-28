@@ -1,10 +1,9 @@
 #include "view.h"
 
-view::view(QAbstractItemModel *model,QWidget *parent) {
+view::view(QWidget *parent) {
     player = new QPushButton(parent);
     player->move(200,200);
     player->setText("start");
-    player2 = new QPushButton(parent);
     next = new QPushButton(parent);
     next->move(300,200);
     next->setText("next");
@@ -29,6 +28,10 @@ view::view(QAbstractItemModel *model,QWidget *parent) {
     volumeButton = new QPushButton(parent);
     volumeButton->move(425,300);
     volumeButton->setText("volume");
-    qDebug()<<"signal";
+    musicList = new QListWidget(parent);
+    musicList->resize(200,400);
+    musicList->move(500,0);
+    addMusic = new QPushButton("addMusic",parent);
+
 
 }

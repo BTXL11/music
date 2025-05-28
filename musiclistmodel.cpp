@@ -55,3 +55,18 @@ void MusicListModel::appendPath(QString MusicName)
 {
     path.append(MusicName);
 }
+
+QString MusicListModel::path_at(int index)
+{
+    return path.at(index);
+}
+
+int MusicListModel::pathSize()
+{
+    return path.size();
+}
+
+bool MusicListModel::contains(QString _path)
+{
+    return path.contains(_path);
+}

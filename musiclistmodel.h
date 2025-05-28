@@ -6,6 +6,7 @@
 #include <QAbstractTableModel>
 #include <QString>
 #include <QList>
+#include <QUrl>
 
 class MusicListModel : public QAbstractTableModel{
     Q_OBJECT
@@ -19,6 +20,9 @@ public:
     QVariant data(const QModelIndex &index,int role = Qt::DisplayRole) const override;
     bool setData(const QModelIndex &index,const QVariant &value,int role = Qt::EditRole) override;
     void appendPath(QString MusicName);
+    QString path_at(int index);
+    int pathSize();
+    bool contains(QString _path);
 };
 
 #endif // MUSICLISTMODEL_H
