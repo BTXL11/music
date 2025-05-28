@@ -11,7 +11,7 @@
 #include <QListWidget>
 class view {
 public:
-    view(QWidget *parent );
+    view(QWidget *parent =nullptr);
     QPushButton *player;
     QPushButton *next;
     QPushButton *preview;
@@ -22,6 +22,8 @@ public:
     QLabel *time;
     QListWidget *musicList;
     QPushButton *addMusic;
+    QPushButton *seachMusic;
+
 };
 
 #endif // VIEW_H

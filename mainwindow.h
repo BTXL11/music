@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "diskscanner.h"
 #include "musiclistmodel.h"
 #include "view.h"
 #include <QMainWindow>
@@ -46,6 +47,7 @@ public slots:
     void PreviewMusic();
     void UpdateMusic(QListWidgetItem *item);
     void AddMusic();
+    void updateMusicListModel(QStringList newMusic);
 signals:
 
 
@@ -61,6 +63,7 @@ private:
     QTime CurrentTime;
     view *view;
     QSortFilterProxyModel *viewModel;
+    DiskScanner *diskScanner;
 
 };
 

@@ -14,10 +14,11 @@ MainWindow::~MainWindow() {
 
 void MainWindow::initwindow(QWidget* parent){
     musicListModel = new MusicListModel;
+    diskScanner = new DiskScanner;
     view = new class view(this);
-    this->initMusic();
+    initconnect();
+    initMusic();
     initview();
-    this->initconnect();
     //QObject::connect(&player,&QPushButton::clicked,&w,[&w](){QDialog *D = new QDialog(&w);D->show();});
 }
 
@@ -27,9 +28,6 @@ void MainWindow::initview()
     view->timeSlider->setMaximum(Music->duration());
     TotalTime = QTime(0,0).addMSecs(Music->duration());
     view->volumeSlider->setSliderPosition(OutPut->volume());
-    for(int i=0;i<musicListModel->pathSize();i++){
-        view->musicList->addItem(QUrl::fromLocalFile(musicListModel->path_at(i)).fileName());
-    }
 }
 
 void MainWindow::initconnect()
@@ -86,6 +84,9 @@ void MainWindow::initconnect()
     });
     QObject::connect(view->musicList,&QListWidget::itemClicked,this,&MainWindow::UpdateMusic);
     QObject::connect(view->addMusic,&QPushButton::clicked,this,&MainWindow::AddMusic);
+    QObject::connect(diskScanner,&DiskScanner::scanNewMusic,musicListModel,&MusicListModel::appendPathList);
+    QObject::connect(musicListModel,&MusicListModel::newMusic,this,&MainWindow::updateMusicListModel);
+
 }
 
 void MainWindow::initMusicList()
@@ -155,7 +156,13 @@ void MainWindow::AddMusic()
     QString newMusic = QFileDialog::getOpenFileName(this,"choose music","/home","(*.mp3)");
     if(!musicListModel->contains(newMusic)){
         musicListModel->appendPath(newMusic);
-        QFileInfo music(newMusic);
-        view->musicList->addItem(music.fileName());
+    }
+}
+
+
+void MainWindow::updateMusicListModel(QStringList newMusic)
+{
+    for(auto& path:newMusic){
+        view->musicList->addItem(QUrl::fromLocalFile(path).fileName());
     }
 }

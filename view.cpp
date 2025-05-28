@@ -32,6 +32,8 @@ view::view(QWidget *parent) {
     musicList->resize(200,400);
     musicList->move(500,0);
     addMusic = new QPushButton("addMusic",parent);
-
+    seachMusic = new QPushButton("seachMusic",parent);
+    seachMusic->move(100,0);
 
 }
+

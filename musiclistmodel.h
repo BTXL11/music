@@ -23,6 +23,10 @@ public:
     QString path_at(int index);
     int pathSize();
     bool contains(QString _path);
+public slots:
+    void appendPathList(QStringList musicPath);
+signals:
+    void newMusic(QStringList newMusic);
 };
 
 #endif // MUSICLISTMODEL_H

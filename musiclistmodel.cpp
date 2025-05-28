@@ -54,6 +54,8 @@ bool MusicListModel::setData(const QModelIndex &index, const QVariant &value, in
 void MusicListModel::appendPath(QString MusicName)
 {
     path.append(MusicName);
+    QStringList temNewMusic={MusicName};
+    emit newMusic(temNewMusic);
 }
 
 QString MusicListModel::path_at(int index)
@@ -69,4 +71,10 @@ int MusicListModel::pathSize()
 bool MusicListModel::contains(QString _path)
 {
     return path.contains(_path);
+}
+
+void MusicListModel::appendPathList(QStringList musicPath)
+{
+    path+=musicPath;
+    emit newMusic(musicPath);
 }
