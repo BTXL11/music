@@ -4,7 +4,6 @@ DiskScanner::DiskScanner(QObject *parent):QObject(parent)
 {
     addPaths(QStandardPaths::standardLocations(QStandardPaths::MusicLocation));
 
-
 }
 
 void DiskScanner::addPath(const QString &path)

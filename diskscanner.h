@@ -26,7 +26,7 @@ private:
     QStringList pendingCreate, pendingDeleted;
     //Dir name filter
     static const inline QStringList musicFileFilter = {
-        "*.mp3", "*.wav", "*.flac", "*.ogg", "*.m4a"
+        "*.mp3", "*.wav", "*.flac", "*.ogg", "*.m4a",
     };
     //static DiffResult diff(const QStringList oldv,const QStringList newv);
 signals:
