@@ -14,11 +14,12 @@ MainWindow::~MainWindow() {
 
 void MainWindow::initwindow(QWidget* parent){
     musicListModel = new MusicListModel;
-    diskScanner = new DiskScanner;
     view = new class view(this);
+    diskScanner = new DiskScanner();
     initconnect();
     initMusic();
     initview();
+
     //QObject::connect(&player,&QPushButton::clicked,&w,[&w](){QDialog *D = new QDialog(&w);D->show();});
 }
 
@@ -91,10 +92,7 @@ void MainWindow::initconnect()
 
 void MainWindow::initMusicList()
 {
-    musicListModel->appendPath("E:\\work\\Qt_project\\music\\music_res\\晴天——空匪.mp3");
-    musicListModel->appendPath("E:\\work\\Qt_project\\music\\music_res\\Breathe_-_George_Capon.mp3");
-    musicListModel->appendPath("E:\\work\\Qt_project\\music\\music_res\\Erick_Fill_&amp;_Alwaro_-_You'll_Be_Fine_ft._Crushboys_(Original_Mix)_-_erickfill.mp3");
-    musicListModel->appendPath("E:\\work\\Qt_project\\music\\music_res\\Ocean_-_David_Davis.mp3");
+    diskScanner->scan();
 }
 
 void MainWindow::initMusic()

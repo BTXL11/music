@@ -7,6 +7,7 @@
 #include <QFileSystemWatcher>
 #include <QDirIterator>
 #include <QMap>
+#include <QtTest/QSignalSpy>
 
 class DiskScanner :public QObject{
     Q_OBJECT

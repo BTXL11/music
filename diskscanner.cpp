@@ -44,6 +44,7 @@ void DiskScanner::scan(bool fullScan)
     for(auto &path:diskWatcher.directories()){
         scanPath(path);
     }
+
 }
 
 void DiskScanner::scanPath(const QString &path, bool fullScan)
@@ -61,6 +62,7 @@ void DiskScanner::scanPath(const QString &path, bool fullScan)
     for(auto& entry : entryInfoList){
         newCache+=entry.absoluteFilePath();
     }
+    emit scanNewMusic(newCache);
     //cache.insert(path,newCache);
     //auto&& [added,removed]=diff(oldCache,newCache);
 }
