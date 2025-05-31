@@ -16,6 +16,7 @@
 #include <QAbstractListModel>
 #include <QListWidget>
 #include <QFileDialog>
+
 class MainPage : public QObject{
     Q_OBJECT
 public:
@@ -45,7 +46,6 @@ private:
     QListWidget *musicList;
     QPushButton *addMusic;
     QPushButton *seachMusic;
-
     MusicListModel *musicListModel;
     QString CurrentMusic;
     int CurrentMusicIndex;
@@ -55,6 +55,7 @@ private:
     QTime CurrentTime;
     DiskScanner *diskScanner;
     QSortFilterProxyModel *viewModel;
+
 };
 
 #endif // MAINPAGE_H

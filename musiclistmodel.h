@@ -13,8 +13,9 @@ class MusicListModel : public QAbstractTableModel{
     QList<QString> name;
     QList<QString> path;
     QList<QString> lyricsPath;
+    QList<QStringList> lyrics;
     QSet<QString> isFavorite;
-    enum Property {Name=0,Path = 1,LyricsPath=2,IsFavorite = 3};
+    enum Property {Name=0,Path = 1,LyricsPath=2,Lyrics=3,IsFavorite = 4};
 public:
     MusicListModel( QObject *parent =nullptr);
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -23,10 +24,12 @@ public:
     bool setData(const QModelIndex &index,const QVariant &value,int role = Qt::EditRole) override;
     void appendMusicPath(QString MusicPath);
     void appendLyricsPath(QString LyricsPath);
-    QString path_at(int index);
-    int pathSize();
-    bool contains(QString _path);
-    bool isempty();
+    QString path_at(int index) const;
+    QString lyricsPath_at(int index) const;
+    int pathSize() const;
+    bool contains(const QString _path) const;
+    bool isempty() const;
+    void loadLyrics();
 public slots:
     void appendMusicPathList(QStringList musicPath);
     void appendLyricsPathList(QStringList lyricsPath);

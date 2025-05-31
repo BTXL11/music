@@ -10,7 +10,7 @@ int MusicListModel::rowCount(const QModelIndex &parent) const
 
 int MusicListModel::columnCount(const QModelIndex &parent) const
 {
-    return 4;
+    return 5;
 }
 
 QVariant MusicListModel::data(const QModelIndex &index, int role) const
@@ -26,6 +26,8 @@ QVariant MusicListModel::data(const QModelIndex &index, int role) const
             return path.value(index.row());
         case Property::LyricsPath:
             return lyricsPath.value(index.row());
+        case Property::Lyrics:
+            return lyrics.value(index.row());
         case IsFavorite:
             return isFavorite.contains(path.value(index.row()));
         }
@@ -46,6 +48,8 @@ bool MusicListModel::setData(const QModelIndex &index, const QVariant &value, in
             path.replace(index.row(),value.toString());
         case Property::LyricsPath:
             lyricsPath.replace(index.row(),value.toString());
+        case Property::Lyrics:
+            lyrics.replace(index.row(),value.toStringList());
         case Property::IsFavorite:
             if(value.value<bool>()){
                 isFavorite.insert(path.value(index.row()));
@@ -77,31 +81,39 @@ void MusicListModel::appendLyricsPath(QString LyricsPath)
     if(!lyricsPath.contains(LyricsPath)){
         QFileInfo file(LyricsPath);
         lyricsPath.replace(name.indexOf(file.baseName()),LyricsPath);
-        qDebug()<<name.indexOf(file.baseName());
-        qDebug()<<LyricsPath;
         QStringList temNewLyricsPath={LyricsPath};
         emit newLyrics(temNewLyricsPath);
     }
 }
 
-QString MusicListModel::path_at(int index)
+QString MusicListModel::path_at(int index) const
 {
     return path.at(index);
 }
 
-int MusicListModel::pathSize()
+QString MusicListModel::lyricsPath_at(int index) const
+{
+    return path.at(index);
+}
+
+int MusicListModel::pathSize() const
 {
     return path.size();
 }
 
-bool MusicListModel::contains(QString _path)
+bool MusicListModel::contains(const QString _path) const
 {
     return path.contains(_path);
 }
 
-bool MusicListModel::isempty()
+bool MusicListModel::isempty() const
 {
     return path.isEmpty();
+}
+
+void MusicListModel::loadLyrics()
+{
+
 }
 
 void MusicListModel::appendLyricsPathList(QStringList lyricsPath)
@@ -116,5 +128,4 @@ void MusicListModel::appendMusicPathList(QStringList musicPath)
     for(auto&path:musicPath){
         this->appendMusicPath(path);
     }
-    qDebug()<<path.size();
 }
