@@ -23,6 +23,7 @@ public:
     QString path_at(int index);
     int pathSize();
     bool contains(QString _path);
+    bool isempty();
 public slots:
     void appendPathList(QStringList musicPath);
 signals:

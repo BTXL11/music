@@ -37,12 +37,10 @@ void MainWindow::initconnect()
         if(!Music->isPlaying())
         {
             Music->play();
-            view->player->setText("pause");
         }
         else
         {
             Music->pause();
-            view->player->setText("start");
         }
     });
     QObject::connect(view->next,&QPushButton::clicked,this,&MainWindow::NextMusic);
@@ -70,6 +68,14 @@ void MainWindow::initconnect()
     QObject::connect(Music,&QMediaPlayer::mediaStatusChanged,[&](){
         if(Music->mediaStatus()==QMediaPlayer::EndOfMedia){
             view->next->click();
+        }
+    });
+    QObject::connect(Music,&QMediaPlayer::playbackStateChanged,[&](QMediaPlayer::PlaybackState newState){
+        if(newState==QMediaPlayer::PausedState){
+            view->player->setText("start");
+        }
+        else if(newState==QMediaPlayer::PlayingState){
+            view->player->setText("pause");
         }
     });
     QObject::connect(view->volumeSlider,&QSlider::sliderMoved,[&](){
@@ -105,10 +111,13 @@ void MainWindow::initMusic()
 
 void MainWindow::updateMusic(int newMusicIndex)
 {
-    CurrentMusicIndex=newMusicIndex;
-    CurrentMusic=musicListModel->path_at(newMusicIndex);
-    Music->setSource(QUrl::fromLocalFile(musicListModel->path_at(newMusicIndex)));
-    view->currentMusicName->setText((QUrl::fromLocalFile(CurrentMusic)).fileName());
+    if(!musicListModel->isempty()){
+        CurrentMusicIndex=newMusicIndex;
+        CurrentMusic=musicListModel->path_at(newMusicIndex);
+        Music->setSource(QUrl::fromLocalFile(musicListModel->path_at(newMusicIndex)));
+        view->currentMusicName->setText((QUrl::fromLocalFile(CurrentMusic)).fileName());
+        Music->play();
+    }
 }
 
 void MainWindow::NextMusic()

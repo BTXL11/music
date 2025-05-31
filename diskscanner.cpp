@@ -3,7 +3,7 @@
 DiskScanner::DiskScanner(QObject *parent):QObject(parent)
 {
     addPaths(QStandardPaths::standardLocations(QStandardPaths::MusicLocation));
-
+    addPath("E:\\work\\Qt_project\\music\\music_res");
 }
 
 void DiskScanner::addPath(const QString &path)

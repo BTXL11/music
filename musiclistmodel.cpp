@@ -75,6 +75,11 @@ bool MusicListModel::contains(QString _path)
     return path.contains(_path);
 }
 
+bool MusicListModel::isempty()
+{
+    return path.isEmpty();
+}
+
 void MusicListModel::appendPathList(QStringList musicPath)
 {
     for(auto&newpath:musicPath){
