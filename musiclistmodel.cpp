@@ -1,4 +1,4 @@
-#include "musiclistmodel.h"
+#include "MusicListModel.h"
 
 MusicListModel::MusicListModel(QObject *parent): QAbstractTableModel(parent){}
 

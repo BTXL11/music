@@ -1,4 +1,4 @@
-#include "diskscanner.h"
+#include "DiskScanner.h"
 
 DiskScanner::DiskScanner(QObject *parent):QObject(parent)
 {

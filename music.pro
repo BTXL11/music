@@ -10,17 +10,17 @@ CONFIG += c++17
 RC_ICONS = icon.ico
 SOURCES += \
     Dialog.cpp \
-    diskscanner.cpp \
-    main.cpp \
+    DiskScanner.cpp \
+    MainPage.cpp \
+    MusicListModel.cpp \
     mainwindow.cpp \
-    musiclistmodel.cpp \
-    view.cpp
+    main.cpp
 
 HEADERS += \
     Dialog.h \
-    diskscanner.h \
-    musiclistmodel.h \
-    view.h\
+    DiskScanner.h \
+    MainPage.h \
+    MusicListModel.h \
     mainwindow.h
 
 FORMS += \
