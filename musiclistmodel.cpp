@@ -1,4 +1,5 @@
 #include "MusicListModel.h"
+#include "qfileinfo.h"
 
 MusicListModel::MusicListModel(QObject *parent): QAbstractTableModel(parent){}
 
@@ -9,7 +10,7 @@ int MusicListModel::rowCount(const QModelIndex &parent) const
 
 int MusicListModel::columnCount(const QModelIndex &parent) const
 {
-    return 2;
+    return 4;
 }
 
 QVariant MusicListModel::data(const QModelIndex &index, int role) const
@@ -19,8 +20,12 @@ QVariant MusicListModel::data(const QModelIndex &index, int role) const
     }
     if(role==Qt::DisplayRole||role==Qt::EditRole){
         switch(Property(index.column())){
+        case Property::Name:
+            return name.value(index.row());
         case Property::Path:
             return path.value(index.row());
+        case Property::LyricsPath:
+            return lyricsPath.value(index.row());
         case IsFavorite:
             return isFavorite.contains(path.value(index.row()));
         }
@@ -35,8 +40,12 @@ bool MusicListModel::setData(const QModelIndex &index, const QVariant &value, in
     }
     if(role==Qt::EditRole){
         switch(Property(index.column())){
+        case Property::Name:
+            path.replace(index.row(),value.toString());
         case Property::Path:
             path.replace(index.row(),value.toString());
+        case Property::LyricsPath:
+            lyricsPath.replace(index.row(),value.toString());
         case Property::IsFavorite:
             if(value.value<bool>()){
                 isFavorite.insert(path.value(index.row()));
@@ -51,12 +60,27 @@ bool MusicListModel::setData(const QModelIndex &index, const QVariant &value, in
     return false;
 }
 
-void MusicListModel::appendPath(QString MusicName)
+void MusicListModel::appendMusicPath(QString MusicPath)
 {
-    if(!path.contains(MusicName)){
-        path.append(MusicName);
-        QStringList temNewMusic={MusicName};
+    if(!path.contains(MusicPath)){
+        path.append(MusicPath);
+        lyricsPath.append("For the moment, there are no lyrics");
+        QFileInfo file(MusicPath);
+        name.append(file.baseName());
+        QStringList temNewMusic={file.baseName()};
         emit newMusic(temNewMusic);
+    }
+}
+
+void MusicListModel::appendLyricsPath(QString LyricsPath)
+{
+    if(!lyricsPath.contains(LyricsPath)){
+        QFileInfo file(LyricsPath);
+        lyricsPath.replace(name.indexOf(file.baseName()),LyricsPath);
+        qDebug()<<name.indexOf(file.baseName());
+        qDebug()<<LyricsPath;
+        QStringList temNewLyricsPath={LyricsPath};
+        emit newLyrics(temNewLyricsPath);
     }
 }
 
@@ -80,9 +104,17 @@ bool MusicListModel::isempty()
     return path.isEmpty();
 }
 
-void MusicListModel::appendPathList(QStringList musicPath)
+void MusicListModel::appendLyricsPathList(QStringList lyricsPath)
 {
-    for(auto&newpath:musicPath){
-        this->appendPath(newpath);
+    for(auto& path: lyricsPath){
+        appendLyricsPath(path);
     }
+}
+
+void MusicListModel::appendMusicPathList(QStringList musicPath)
+{
+    for(auto&path:musicPath){
+        this->appendMusicPath(path);
+    }
+    qDebug()<<path.size();
 }

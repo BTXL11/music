@@ -111,7 +111,8 @@ void MainPage::initconnect()
     });
     QObject::connect(musicList,&QListWidget::itemClicked,this,&MainPage::UpdateMusic);
     QObject::connect(addMusic,&QPushButton::clicked,this,&MainPage::AddMusic);
-    QObject::connect(diskScanner,&DiskScanner::scanNewMusic,musicListModel,&MusicListModel::appendPathList);
+    QObject::connect(diskScanner,&DiskScanner::scanMusic,musicListModel,&MusicListModel::appendMusicPathList);
+    QObject::connect(diskScanner,&DiskScanner::scanLyrics,musicListModel,&MusicListModel::appendLyricsPathList);
     QObject::connect(musicListModel,&MusicListModel::newMusic,this,&MainPage::updateMusicListModel);
 
 }
@@ -180,7 +181,7 @@ void MainPage::AddMusic()
 {
     QString newMusic = QFileDialog::getOpenFileName(parent,"choose music","/home","(*.mp3)");
     if(!musicListModel->contains(newMusic)){
-        musicListModel->appendPath(newMusic);
+        musicListModel->appendMusicPath(newMusic);
     }
 }
 

@@ -45,6 +45,7 @@ private:
     QListWidget *musicList;
     QPushButton *addMusic;
     QPushButton *seachMusic;
+
     MusicListModel *musicListModel;
     QString CurrentMusic;
     int CurrentMusicIndex;

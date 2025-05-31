@@ -38,8 +38,11 @@ constexpr auto qt_meta_stringdata_CLASSMusicListModelENDCLASS = QtMocHelpers::st
     "MusicListModel",
     "newMusic",
     "",
-    "appendPathList",
-    "musicPath"
+    "newLyrics",
+    "appendMusicPathList",
+    "musicPath",
+    "appendLyricsPathList",
+    "lyricsPath"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -52,24 +55,28 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMusicListModelENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   26,    2, 0x06,    1 /* Public */,
+       1,    1,   38,    2, 0x06,    1 /* Public */,
+       3,    1,   41,    2, 0x06,    3 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    1,   29,    2, 0x0a,    3 /* Public */,
+       4,    1,   44,    2, 0x0a,    5 /* Public */,
+       6,    1,   47,    2, 0x0a,    7 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QStringList,    1,
+    QMetaType::Void, QMetaType::QStringList,    3,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QStringList,    4,
+    QMetaType::Void, QMetaType::QStringList,    5,
+    QMetaType::Void, QMetaType::QStringList,    7,
 
        0        // eod
 };
@@ -86,7 +93,13 @@ Q_CONSTINIT const QMetaObject MusicListModel::staticMetaObject = { {
         // method 'newMusic'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QStringList, std::false_type>,
-        // method 'appendPathList'
+        // method 'newLyrics'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QStringList, std::false_type>,
+        // method 'appendMusicPathList'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QStringList, std::false_type>,
+        // method 'appendLyricsPathList'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QStringList, std::false_type>
     >,
@@ -100,7 +113,9 @@ void MusicListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         (void)_t;
         switch (_id) {
         case 0: _t->newMusic((*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[1]))); break;
-        case 1: _t->appendPathList((*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[1]))); break;
+        case 1: _t->newLyrics((*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[1]))); break;
+        case 2: _t->appendMusicPathList((*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[1]))); break;
+        case 3: _t->appendLyricsPathList((*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -109,6 +124,13 @@ void MusicListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
             using _t = void (MusicListModel::*)(QStringList );
             if (_t _q_method = &MusicListModel::newMusic; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (MusicListModel::*)(QStringList );
+            if (_t _q_method = &MusicListModel::newLyrics; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 1;
                 return;
             }
         }
@@ -134,13 +156,13 @@ int MusicListModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }
@@ -150,5 +172,12 @@ void MusicListModel::newMusic(QStringList _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void MusicListModel::newLyrics(QStringList _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP

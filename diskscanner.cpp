@@ -41,27 +41,41 @@ void DiskScanner::scan(bool fullScan)
     fullScan = fullScan||isInitScan;
     isInitScan = false;
     for(auto &path:diskWatcher.directories()){
-        scanPath(path);
+        scanMusicPath(path);
     }
-
+    for(auto &path:diskWatcher.directories()){
+        scanLyricsPath(path);
+    }
 }
 
-void DiskScanner::scanPath(const QString &path, bool fullScan)
+void DiskScanner::scanMusicPath(const QString &path, bool fullScan)
 {
     if(!diskWatcher.directories().contains(path)){
-        //run remove
-        pendingDeleted += cache.take(path);
         return;
     }
-    qDebug()<<path;
-    //QStringList oldCache = fullScan?QString {}:cache.value(path);
-    QStringList newCache;
+    qDebug()<<"scan music path:"+path;
+    QStringList musicCache;
     auto &&entryInfoList = QDir(path).entryInfoList(musicFileFilter,
                                                     QDir::Files|QDir::NoDotAndDotDot);
     for(auto& entry : entryInfoList){
-        newCache+=entry.absoluteFilePath();
+        musicCache+=entry.absoluteFilePath();
     }
-    emit scanNewMusic(newCache);
-    //cache.insert(path,newCache);
-    //auto&& [added,removed]=diff(oldCache,newCache);
+    emit scanMusic(musicCache);
+
+
+}
+
+void DiskScanner::scanLyricsPath(const QString &path, bool fullScan)
+{
+    if(!diskWatcher.directories().contains(path)){
+        return;
+    }
+    qDebug()<<"scan lyrics path:"+path;
+    QStringList lyricsCache;
+    auto &&_entryInfoList = QDir(path).entryInfoList(lyricsFileFilter,
+                                                     QDir::Files|QDir::NoDotAndDotDot);
+    for(auto& _entry : _entryInfoList){
+        lyricsCache+=_entry.absoluteFilePath();
+    }
+    emit scanLyrics(lyricsCache);
 }

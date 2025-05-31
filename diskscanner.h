@@ -8,6 +8,7 @@
 #include <QDirIterator>
 #include <QMap>
 #include <QtTest/QSignalSpy>
+#include <QTimer>
 
 class DiskScanner :public QObject{
     Q_OBJECT
@@ -21,17 +22,20 @@ private:
     QFileSystemWatcher diskWatcher;
     //scan special path,path must be a subfolder of searchPath
     QMap<QString,QStringList> cache;
-    void scanPath(const QString& path,bool fullScan = false);
+    void scanMusicPath(const QString& path,bool fullScan = false);
+    void scanLyricsPath(const QString& path,bool fullScan = false);
     //work with scan() and scanPath(), as scan ache
-    QStringList pendingCreate, pendingDeleted;
     //Dir name filter
     static const inline QStringList musicFileFilter = {
         "*.mp3", "*.wav", "*.flac", "*.ogg", "*.m4a",
     };
+    static const inline QStringList lyricsFileFilter = {
+        "*.lrc",
+    };
     //static DiffResult diff(const QStringList oldv,const QStringList newv);
 signals:
-    void scanNewMusic(QStringList musicPath);
-
+    void scanMusic(QStringList musicPath);
+    void scanLyrics(QStringList lyricsPath);
 };
 
 #endif // DISKSCANNER_H
