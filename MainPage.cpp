@@ -7,6 +7,7 @@ MainPage::MainPage(QWidget *_parent) :parent(_parent){
     initMainPage();
     initconnect();
     initMusic();
+    musicListModel->loadLyrics();
 
 }
 

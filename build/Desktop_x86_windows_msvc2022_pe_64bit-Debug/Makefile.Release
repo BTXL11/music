@@ -421,6 +421,9 @@ release\moc_DiskScanner.cpp: ..\..\DiskScanner.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qxpfunctional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23functional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QTimer \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtimer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbasictimer.h \
 		release\moc_predefs.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\bin\moc.exe
 	E:\work\Qt\6.7.3\msvc2022_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include E:/work/Qt_project/music/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug/release/moc_predefs.h -IE:/work/Qt/6.7.3/msvc2022_64/mkspecs/win32-msvc -IE:/work/Qt_project/music -IE:/work/Qt/6.7.3/msvc2022_64/include -IE:/work/Qt/6.7.3/msvc2022_64/include/QtMultimedia -IE:/work/Qt/6.7.3/msvc2022_64/include/QtWidgets -IE:/work/Qt/6.7.3/msvc2022_64/include/QtGui -IE:/work/Qt/6.7.3/msvc2022_64/include/QtNetwork -IE:/work/Qt/6.7.3/msvc2022_64/include/QtCore -I. -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" ..\..\DiskScanner.h -o release\moc_DiskScanner.cpp
@@ -639,11 +642,16 @@ release\moc_MainPage.cpp: ..\..\MainPage.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qxpfunctional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23functional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QTimer \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtimer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbasictimer.h \
 		..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QAbstractTableModel \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QString \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QUrl \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QRegularExpression \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qaudiooutput.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimediaglobal.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimedia-config.h \
@@ -654,7 +662,6 @@ release\moc_MainPage.cpp: ..\..\MainPage.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qmediaenumdebug.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsortfilterproxymodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractproxymodel.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qabstractbutton.h \
@@ -691,10 +698,8 @@ release\moc_MainPage.cpp: ..\..\MainPage.h \
 	E:\work\Qt\6.7.3\msvc2022_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include E:/work/Qt_project/music/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug/release/moc_predefs.h -IE:/work/Qt/6.7.3/msvc2022_64/mkspecs/win32-msvc -IE:/work/Qt_project/music -IE:/work/Qt/6.7.3/msvc2022_64/include -IE:/work/Qt/6.7.3/msvc2022_64/include/QtMultimedia -IE:/work/Qt/6.7.3/msvc2022_64/include/QtWidgets -IE:/work/Qt/6.7.3/msvc2022_64/include/QtGui -IE:/work/Qt/6.7.3/msvc2022_64/include/QtNetwork -IE:/work/Qt/6.7.3/msvc2022_64/include/QtCore -I. -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" ..\..\MainPage.h -o release\moc_MainPage.cpp
 
 release\moc_MusicListModel.cpp: ..\..\MusicListModel.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QObject \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobject.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobjectdefs.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdatetime.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcalendar.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qglobal.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtversionchecks.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtconfiginclude.h \
@@ -739,14 +744,13 @@ release\moc_MusicListModel.cpp: ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtresource.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qttranslation.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qversiontagging.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtmetamacros.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobjectdefs_impl.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfunctionaltools_impl.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstring.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qchar.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringview.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlocale.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qvariant.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmetatype.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearray.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qrefcount.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtmetamacros.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qarraydata.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpair.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qarraydatapointer.h \
@@ -759,6 +763,16 @@ release\moc_MusicListModel.cpp: ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearrayalgorithms.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearrayview.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringfwd.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcompare.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcomparehelpers.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdatastream.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qscopedpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiodevicebase.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfloat16.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qhashfunctions.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstring.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qchar.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringview.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringliteral.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringalgorithms.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlatin1stringview.h \
@@ -768,29 +782,38 @@ release\moc_MusicListModel.cpp: ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringbuilder.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringconverter.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringconverter_base.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlist.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qhashfunctions.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiterator.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearraylist.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringlist.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qalgorithms.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringmatcher.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcoreevent.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qscopedpointer.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmetatype.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcompare.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcomparehelpers.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdatastream.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiodevicebase.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfloat16.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmath.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qalgorithms.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiterable.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmetacontainer.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcontainerinfo.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtaggedpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobjectdefs.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfunctionaltools_impl.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qscopeguard.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdebug.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtextstream.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcontiguouscache.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsharedpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qshareddata.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlist.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiterator.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearraylist.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringlist.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringmatcher.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmap.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qshareddata_impl.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qset.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qhash.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qvarlengtharray.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23utility.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobject.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcoreevent.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobject_impl.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbindingstorage.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QObject \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\QWidget \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qwidget.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qtwidgetsglobal.h \
@@ -802,7 +825,6 @@ release\moc_MusicListModel.cpp: ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qwindowdefs.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qwindowdefs_win.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmargins.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23utility.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qaction.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qkeysequence.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qicon.h \
@@ -814,24 +836,12 @@ release\moc_MusicListModel.cpp: ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qcolor.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qrgb.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qrgba64.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qshareddata.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qimage.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qpixelformat.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qtransform.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qpolygon.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qregion.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qline.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qvariant.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdebug.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtextstream.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcontiguouscache.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsharedpointer.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsharedpointer_impl.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmap.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qshareddata_impl.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qset.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qhash.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qvarlengtharray.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qpalette.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qbrush.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qfont.h \
@@ -875,12 +885,13 @@ release\moc_MusicListModel.cpp: ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qexception.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpromise.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qinputmethod.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlocale.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qguiapplication_platform.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QAbstractTableModel \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QString \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QUrl \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QRegularExpression \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		release\moc_predefs.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\bin\moc.exe
 	E:\work\Qt\6.7.3\msvc2022_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include E:/work/Qt_project/music/build/Desktop_x86_windows_msvc2022_pe_64bit-Debug/release/moc_predefs.h -IE:/work/Qt/6.7.3/msvc2022_64/mkspecs/win32-msvc -IE:/work/Qt_project/music -IE:/work/Qt/6.7.3/msvc2022_64/include -IE:/work/Qt/6.7.3/msvc2022_64/include/QtMultimedia -IE:/work/Qt/6.7.3/msvc2022_64/include/QtWidgets -IE:/work/Qt/6.7.3/msvc2022_64/include/QtGui -IE:/work/Qt/6.7.3/msvc2022_64/include/QtNetwork -IE:/work/Qt/6.7.3/msvc2022_64/include/QtCore -I. -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" ..\..\MusicListModel.h -o release\moc_MusicListModel.cpp
@@ -1100,11 +1111,16 @@ release\moc_mainwindow.cpp: ..\..\mainwindow.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qxpfunctional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23functional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QTimer \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtimer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbasictimer.h \
 		..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QAbstractTableModel \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QString \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QUrl \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QRegularExpression \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qaudiooutput.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimediaglobal.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimedia-config.h \
@@ -1115,7 +1131,6 @@ release\moc_mainwindow.cpp: ..\..\mainwindow.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qmediaenumdebug.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsortfilterproxymodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractproxymodel.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qabstractbutton.h \
@@ -1400,7 +1415,10 @@ release\DiskScanner.obj: ..\..\DiskScanner.cpp ..\..\DiskScanner.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtemporarydir.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qxpfunctional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23functional.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpointer.h
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QTimer \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtimer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbasictimer.h
 
 release\MainPage.obj: ..\..\MainPage.cpp ..\..\MainPage.h \
 		..\..\DiskScanner.h \
@@ -1616,11 +1634,16 @@ release\MainPage.obj: ..\..\MainPage.cpp ..\..\MainPage.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qxpfunctional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23functional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QTimer \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtimer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbasictimer.h \
 		..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QAbstractTableModel \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QString \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QUrl \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QRegularExpression \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qaudiooutput.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimediaglobal.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimedia-config.h \
@@ -1631,7 +1654,6 @@ release\MainPage.obj: ..\..\MainPage.cpp ..\..\MainPage.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qmediaenumdebug.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsortfilterproxymodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractproxymodel.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qabstractbutton.h \
@@ -1665,10 +1687,8 @@ release\MainPage.obj: ..\..\MainPage.cpp ..\..\MainPage.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qdialog.h
 
 release\MusicListModel.obj: ..\..\MusicListModel.cpp ..\..\MusicListModel.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QObject \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobject.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobjectdefs.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdatetime.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcalendar.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qglobal.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtversionchecks.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtconfiginclude.h \
@@ -1713,14 +1733,13 @@ release\MusicListModel.obj: ..\..\MusicListModel.cpp ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtresource.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qttranslation.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qversiontagging.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtmetamacros.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobjectdefs_impl.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfunctionaltools_impl.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstring.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qchar.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringview.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlocale.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qvariant.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmetatype.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearray.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qrefcount.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtmetamacros.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qarraydata.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpair.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qarraydatapointer.h \
@@ -1733,6 +1752,16 @@ release\MusicListModel.obj: ..\..\MusicListModel.cpp ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearrayalgorithms.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearrayview.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringfwd.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcompare.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcomparehelpers.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdatastream.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qscopedpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiodevicebase.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfloat16.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qhashfunctions.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstring.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qchar.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringview.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringliteral.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringalgorithms.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlatin1stringview.h \
@@ -1742,29 +1771,38 @@ release\MusicListModel.obj: ..\..\MusicListModel.cpp ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringbuilder.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringconverter.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringconverter_base.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlist.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qhashfunctions.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiterator.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearraylist.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringlist.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qalgorithms.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringmatcher.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcoreevent.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qscopedpointer.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmetatype.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcompare.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcomparehelpers.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdatastream.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiodevicebase.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfloat16.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmath.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qalgorithms.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiterable.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmetacontainer.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcontainerinfo.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtaggedpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobjectdefs.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfunctionaltools_impl.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qscopeguard.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdebug.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtextstream.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcontiguouscache.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsharedpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qshareddata.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsharedpointer_impl.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlist.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qiterator.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbytearraylist.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringlist.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qstringmatcher.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmap.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qshareddata_impl.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qset.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qhash.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qvarlengtharray.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23utility.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobject.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcoreevent.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qobject_impl.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbindingstorage.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QObject \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\QWidget \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qwidget.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qtwidgetsglobal.h \
@@ -1776,7 +1814,6 @@ release\MusicListModel.obj: ..\..\MusicListModel.cpp ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qwindowdefs.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qwindowdefs_win.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmargins.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23utility.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qaction.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qkeysequence.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qicon.h \
@@ -1788,24 +1825,12 @@ release\MusicListModel.obj: ..\..\MusicListModel.cpp ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qcolor.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qrgb.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qrgba64.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qshareddata.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qimage.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qpixelformat.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qtransform.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qpolygon.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qregion.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qline.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qvariant.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qdebug.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtextstream.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qcontiguouscache.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsharedpointer.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsharedpointer_impl.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qmap.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qshareddata_impl.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qset.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qhash.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qvarlengtharray.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qpalette.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qbrush.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qfont.h \
@@ -1849,12 +1874,17 @@ release\MusicListModel.obj: ..\..\MusicListModel.cpp ..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qexception.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpromise.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qinputmethod.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qlocale.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtGui\qguiapplication_platform.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QAbstractTableModel \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QString \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QUrl
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QUrl \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QRegularExpression \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfileinfo.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfile.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qfiledevice.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtimezone.h
 
 release\mainwindow.obj: ..\..\mainwindow.cpp ..\..\mainwindow.h \
 		..\..\MainPage.h \
@@ -2071,11 +2101,16 @@ release\mainwindow.obj: ..\..\mainwindow.cpp ..\..\mainwindow.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qxpfunctional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23functional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QTimer \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtimer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbasictimer.h \
 		..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QAbstractTableModel \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QString \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QUrl \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QRegularExpression \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qaudiooutput.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimediaglobal.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimedia-config.h \
@@ -2086,7 +2121,6 @@ release\mainwindow.obj: ..\..\mainwindow.cpp ..\..\mainwindow.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qmediaenumdebug.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsortfilterproxymodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractproxymodel.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qabstractbutton.h \
@@ -2355,11 +2389,16 @@ release\main.obj: ..\..\main.cpp ..\..\mainwindow.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qxpfunctional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\q23functional.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qpointer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QTimer \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qtimer.h \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qbasictimer.h \
 		..\..\MusicListModel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QAbstractTableModel \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QString \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QUrl \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\QRegularExpression \
+		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qaudiooutput.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimediaglobal.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qtmultimedia-config.h \
@@ -2370,7 +2409,6 @@ release\main.obj: ..\..\main.cpp ..\..\mainwindow.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtMultimedia\qmediaenumdebug.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qsortfilterproxymodel.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qabstractproxymodel.h \
-		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtCore\qregularexpression.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\QPushButton \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qpushbutton.h \
 		..\..\..\..\Qt\6.7.3\msvc2022_64\include\QtWidgets\qabstractbutton.h \
