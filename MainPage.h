@@ -16,6 +16,7 @@
 #include <QAbstractListModel>
 #include <QListWidget>
 #include <QFileDialog>
+#include <QFont>
 
 class MainPage : public QObject{
     Q_OBJECT
@@ -25,12 +26,12 @@ public:
     void initconnect();
     void initMusicList();
     void initMusic();
-    void updateMusic(int newMusicIndex);
 
 public slots:
     void NextMusic();
     void PreviewMusic();
     void UpdateMusic(QListWidgetItem *item);
+    void UpdateLyric();
     void AddMusic();
     void updateMusicListModel(QStringList newMusic);
 private:
@@ -46,15 +47,21 @@ private:
     QListWidget *musicList;
     QPushButton *addMusic;
     QPushButton *seachMusic;
+    QLabel *lyricsDisplay;
     MusicListModel *musicListModel;
     QString CurrentMusic;
     int CurrentMusicIndex;
     QMediaPlayer *Music = new QMediaPlayer;
     QAudioOutput *OutPut = new QAudioOutput;
     QTime TotalTime;
+    QTime previewLyricTime;
     QTime CurrentTime;
+    QTime nextLyricTime;
+    int CurrentLyricsIndex;
     DiskScanner *diskScanner;
     QSortFilterProxyModel *viewModel;
+    void updateMusic(int newMusicIndex);
+    void updateLyric(int newLyricIndex);
 
 };
 

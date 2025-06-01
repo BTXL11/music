@@ -7,7 +7,6 @@ MainPage::MainPage(QWidget *_parent) :parent(_parent){
     initMainPage();
     initconnect();
     initMusic();
-    musicListModel->loadLyrics();
 
 }
 
@@ -50,6 +49,13 @@ void MainPage::initMainPage()
     timeSlider->setMaximum(Music->duration());
     TotalTime = QTime(0,0).addMSecs(Music->duration());
     volumeSlider->setSliderPosition(OutPut->volume());
+    lyricsDisplay = new QLabel("lyricsDisplay",parent);
+    lyricsDisplay->move(150,400);
+    lyricsDisplay->resize(500,100);
+    lyricsDisplay->setTextFormat(Qt::RichText);
+    QFont font("lyrics",20,QFont::Bold);
+    lyricsDisplay->setFont(font);
+
 }
 
 void MainPage::initconnect()
@@ -91,11 +97,11 @@ void MainPage::initconnect()
             next->click();
         }
     });
-    QObject::connect(Music,&QMediaPlayer::playbackStateChanged,[&](QMediaPlayer::PlaybackState newState){
-        if(newState==QMediaPlayer::PausedState){
+    QObject::connect(Music,&QMediaPlayer::playbackStateChanged,[&](QMediaPlayer::PlaybackState State){
+        if(State==QMediaPlayer::PausedState){
             player->setText("start");
         }
-        else if(newState==QMediaPlayer::PlayingState){
+        else if(State==QMediaPlayer::PlayingState){
             player->setText("pause");
         }
     });
@@ -115,12 +121,15 @@ void MainPage::initconnect()
     QObject::connect(diskScanner,&DiskScanner::scanMusic,musicListModel,&MusicListModel::appendMusicPathList);
     QObject::connect(diskScanner,&DiskScanner::scanLyrics,musicListModel,&MusicListModel::appendLyricsPathList);
     QObject::connect(musicListModel,&MusicListModel::newMusic,this,&MainPage::updateMusicListModel);
+    QObject::connect(Music,&QMediaPlayer::sourceChanged,[&](){});
+    QObject::connect(Music,&QMediaPlayer::positionChanged,this,&MainPage::UpdateLyric);
 
 }
 
 void MainPage::initMusicList()
 {
     diskScanner->scan();
+    musicListModel->loadLyrics();
 }
 
 void MainPage::initMusic()
@@ -133,12 +142,32 @@ void MainPage::initMusic()
 
 void MainPage::updateMusic(int newMusicIndex)
 {
-    if(!musicListModel->isempty()){
+    if(!musicListModel->isempty()&&newMusicIndex<musicListModel->pathSize()){
         CurrentMusicIndex=newMusicIndex;
+        CurrentLyricsIndex=0;
         CurrentMusic=musicListModel->path_at(newMusicIndex);
         Music->setSource(QUrl::fromLocalFile(musicListModel->path_at(newMusicIndex)));
         currentMusicName->setText((QUrl::fromLocalFile(CurrentMusic)).fileName());
-        Music->play();
+        if(musicListModel->lyric_at(CurrentMusicIndex,0)!="For the moment, there are no lyrics"){
+            previewLyricTime = musicListModel->time_at(CurrentMusicIndex,0);
+            nextLyricTime = musicListModel->time_at(CurrentMusicIndex,1);
+        }
+        else{
+            lyricsDisplay->setText("For the moment, there are no lyrics");
+        }
+    }
+}
+
+void MainPage::updateLyric(int newLyricIndex)
+{
+    qDebug()<<newLyricIndex;
+    if(newLyricIndex>=0&&newLyricIndex<musicListModel->lyricsSize(CurrentMusicIndex)){
+        qDebug()<<"signal";
+        qDebug()<<newLyricIndex;
+        previewLyricTime=musicListModel->time_at(CurrentMusicIndex,newLyricIndex);
+        nextLyricTime=musicListModel->time_at(CurrentMusicIndex,newLyricIndex+1);
+        CurrentLyricsIndex=newLyricIndex;
+        lyricsDisplay->setText(musicListModel->lyric_at(CurrentMusicIndex,newLyricIndex));
     }
 }
 
@@ -176,6 +205,20 @@ void MainPage::UpdateMusic(QListWidgetItem *item )
     Music->setSource(QUrl::fromLocalFile(musicListModel->path_at(newMusicIndex)));
     currentMusicName->setText((QUrl::fromLocalFile(CurrentMusic)).fileName());
     player->setText("start");
+    if(musicListModel->lyric_at(CurrentMusicIndex,0)!="For the moment, there are no lyrics"){
+        previewLyricTime = musicListModel->time_at(CurrentMusicIndex,0);
+        nextLyricTime = musicListModel->time_at(CurrentMusicIndex,1);
+    }
+    else{
+        lyricsDisplay->setText("For the moment, there are no lyrics");
+    }
+}
+
+void MainPage::UpdateLyric()
+{
+    if(CurrentTime>=nextLyricTime){
+        updateLyric(CurrentLyricsIndex+1);
+    }
 }
 
 void MainPage::AddMusic()

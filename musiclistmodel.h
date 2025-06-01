@@ -43,7 +43,10 @@ public:
     void appendLyricsPath(QString LyricsPath);
     QString path_at(int index) const;
     QString lyricsPath_at(int index) const;
+    QString lyric_at(int lyricsIndex,int index) const;
+    QTime time_at(int lyricsIndex,int index) const;
     int pathSize() const;
+    int lyricsSize(int index) const;
     bool contains(const QString _path) const;
     bool isempty() const;
     void loadLyrics();

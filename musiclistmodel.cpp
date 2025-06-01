@@ -119,9 +119,24 @@ QString MusicListModel::lyricsPath_at(int index) const
     return lyricsPath.at(index);
 }
 
+QString MusicListModel::lyric_at(int lyricsIndex, int index) const
+{
+    return lyrics.at(lyricsIndex).lyrics.at(index);
+}
+
+QTime MusicListModel::time_at(int lyricsIndex, int index) const
+{
+    return lyrics.at(lyricsIndex).time.at(index);
+}
+
 int MusicListModel::pathSize() const
 {
     return path.size();
+}
+
+int MusicListModel::lyricsSize(int index) const
+{
+    return lyrics.at(index).lyrics.size();
 }
 
 bool MusicListModel::contains(const QString _path) const
