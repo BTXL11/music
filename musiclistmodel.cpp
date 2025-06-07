@@ -119,6 +119,11 @@ QString MusicListModel::lyricsPath_at(int index) const
     return lyricsPath.at(index);
 }
 
+bool MusicListModel::lyricsIsEmpty(int lyricsIndex)
+{
+    return lyricsPath_at(lyricsIndex)=="For the moment, there are no lyrics";
+}
+
 QString MusicListModel::lyric_at(int lyricsIndex, int index) const
 {
     return lyrics.at(lyricsIndex).lyrics.at(index);
@@ -152,7 +157,7 @@ bool MusicListModel::isempty() const
 void MusicListModel::loadLyrics()
 {
     QRegularExpression tim(R"(\d{2}:\d{2}.\d{2})");
-    QRegularExpression lyr(R"(\p{Script=Han}+)");
+    QRegularExpression lyr(R"(]\s*(.*))");
     for(auto&path:lyricsPath){
         if(path!="For the moment, there are no lyrics"){
             QFile file(path);
@@ -175,9 +180,15 @@ void MusicListModel::loadLyrics()
                     timeString = tim.match(line).captured();
                     time=QTime::fromString(timeString,"mm:ss.zz");
                     lyric = lyr.match(line).captured();
+                    lyric.remove("]");
                     temlyricsStruct.append(time,lyric);
                 }
             }
+            timeString = tim.match(line).captured();
+            time=QTime::fromString(timeString,"mm:ss.zz");
+            lyric = lyr.match(line).captured();
+            lyric.remove("]");
+            temlyricsStruct.append(time,lyric);
             replaceLyrics(index,temlyricsStruct);
         }
     }

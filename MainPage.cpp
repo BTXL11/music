@@ -149,19 +149,19 @@ void MainPage::updateMusic(int newMusicIndex)
         Music->setSource(QUrl::fromLocalFile(musicListModel->path_at(newMusicIndex)));
         currentMusicName->setText((QUrl::fromLocalFile(CurrentMusic)).fileName());
         if(musicListModel->lyric_at(CurrentMusicIndex,0)!="For the moment, there are no lyrics"){
-            previewLyricTime = musicListModel->time_at(CurrentMusicIndex,0);
-            nextLyricTime = musicListModel->time_at(CurrentMusicIndex,1);
+            updateLyric(0);
         }
         else{
             lyricsDisplay->setText("For the moment, there are no lyrics");
         }
+        musicList->setCurrentRow(newMusicIndex);
     }
 }
 
 void MainPage::updateLyric(int newLyricIndex)
 {
     qDebug()<<newLyricIndex;
-    if(newLyricIndex>=0&&newLyricIndex<musicListModel->lyricsSize(CurrentMusicIndex)){
+    if(newLyricIndex>=0&&newLyricIndex<musicListModel->lyricsSize(CurrentMusicIndex)-1){
         qDebug()<<"signal";
         qDebug()<<newLyricIndex;
         previewLyricTime=musicListModel->time_at(CurrentMusicIndex,newLyricIndex);
@@ -202,22 +202,22 @@ void MainPage::UpdateMusic(QListWidgetItem *item )
     int newMusicIndex=musicList->row(item);
     CurrentMusicIndex=newMusicIndex;
     CurrentMusic=musicListModel->path_at(newMusicIndex);
-    Music->setSource(QUrl::fromLocalFile(musicListModel->path_at(newMusicIndex)));
-    currentMusicName->setText((QUrl::fromLocalFile(CurrentMusic)).fileName());
-    player->setText("start");
-    if(musicListModel->lyric_at(CurrentMusicIndex,0)!="For the moment, there are no lyrics"){
-        previewLyricTime = musicListModel->time_at(CurrentMusicIndex,0);
-        nextLyricTime = musicListModel->time_at(CurrentMusicIndex,1);
-    }
-    else{
-        lyricsDisplay->setText("For the moment, there are no lyrics");
-    }
+    updateMusic(newMusicIndex);
 }
 
 void MainPage::UpdateLyric()
 {
-    if(CurrentTime>=nextLyricTime){
-        updateLyric(CurrentLyricsIndex+1);
+    if(CurrentTime>=nextLyricTime&&!musicListModel->lyricsIsEmpty(CurrentMusicIndex)){
+        while(CurrentTime>=nextLyricTime&&CurrentLyricsIndex<musicListModel->lyricsSize(CurrentMusicIndex)-2){
+            updateLyric(CurrentLyricsIndex+1);
+        }
+
+    }
+    else if(CurrentTime<previewLyricTime&&!musicListModel->lyricsIsEmpty(CurrentMusicIndex)&&CurrentLyricsIndex-1>=0){
+        while(CurrentTime<previewLyricTime){
+            updateLyric(CurrentLyricsIndex-1);
+        }
+
     }
 }
 

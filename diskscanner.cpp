@@ -4,6 +4,7 @@ DiskScanner::DiskScanner(QObject *parent):QObject(parent)
 {
     addPaths(QStandardPaths::standardLocations(QStandardPaths::MusicLocation));
     addPath("E:\\work\\Qt_project\\music\\music_res");
+    addPath("E:\\SteamLibrary\\steamapps\\music");
 }
 
 void DiskScanner::addPath(const QString &path)
